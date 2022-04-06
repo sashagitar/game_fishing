@@ -4,6 +4,7 @@ class Sadok:
     sadok=[]
     n=int()
     x=0
+    cost=0
     def __init__(self):
         self.sadok = []
         self.n = 0
@@ -16,6 +17,8 @@ class Sadok:
         sum=0
         for i in self.sadok:
             sum+=self.cost 
+            self.cost=0
+            self.sadok=[]
         return sum
     def __str__(self,cost) -> str():
         s=''
