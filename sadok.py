@@ -14,7 +14,7 @@ class Sadok:
         self.n+=1
         self.cost+=f.prise
     def sold(self):
-        if():
+        if self.sadok == []:
             return -1
         else:
             self.sum=self.cost 
