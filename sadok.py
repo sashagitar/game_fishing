@@ -12,14 +12,15 @@ class Sadok:
     def Aad(self,f:Fish):
         self.sadok.append(f)
         self.n+=1
-        self.cost+=self.prise
+        self.cost+=f.prise
     def sold(self):
-        sum=0
-        for i in self.sadok:
-            sum+=self.cost 
+        if():
+            return -1
+        else:
+            self.sum=self.cost 
             self.cost=0
-            self.sadok=[]
-        return sum
+            self.sadok=[] 
+            return sum
     def __str__(self,cost) -> str():
         s=''
         if self.n!=0:
