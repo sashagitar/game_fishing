@@ -12,11 +12,13 @@ class Sadok:
         self.sadok.append(f)
         self.n+=1
         self.cost+=self.prise
-    def sold(self:Fish,vid:str,ves:int,price:int,money:int):
-        self.vid= vid
-        self.ves= ves
-        self.price= ves*price/1000
-        self.money += self.prise
+    def sold(self,ves,price,money):
+        sum=0
+        for i in range(self.n):
+            sum +=ves*price/1000
+            self.n-=1
+        self.money += sum
+        sum=0
         return money
     def __str__(self,cost) -> str():
         s=''
