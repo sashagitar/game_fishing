@@ -1,5 +1,5 @@
-import re
 from fish import Fish 
+from pers import Pers
 class Sadok:
     sadok=[]
     n=int()
@@ -11,7 +11,13 @@ class Sadok:
     def Aad(self,f:Fish):
         self.sadok.append(f)
         self.n+=1
-        self.cost+=f.prise
+        self.cost+=self.prise
+    def sold(self:Fish,vid:str,ves:int,price:int,money:int):
+        self.vid= vid
+        self.ves= ves
+        self.price= ves*price/1000
+        self.money += self.prise
+        return money
     def __str__(self,cost) -> str():
         s=''
         if self.n!=0:
