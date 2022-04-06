@@ -21,6 +21,3 @@ class Magaz:
         return s
     def duy(self, i):
         return Prodykt(self.name[i], self.prise[i], self.stats[i], self.id_[i])
-            
-ddd = Magaz()
-print(ddd)
