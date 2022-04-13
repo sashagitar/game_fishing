@@ -7,19 +7,17 @@ class Fishing: #класс рыбалка
     ves=[(350,650),(1750,2550),(3750,4250),(2400,2600),(3500,4500),(382,750),(975,1500),(2750,5000),(4000,7500),(115,200),(2,10),(500,1400)]#вес рыбы
     def __init__(self):#
         self.test_fish = Fish('test1',99,10)#тестовая рыба
-    def go_fishing(self,i:int):#начало рыалки
-        self.out_fish=Fish(self)  #сохранение     
+
+    def go_fishing(self):#начало рыалки   
         ran=random.random()*100#выдает не целое число от 0 до 1 и умножает на 100
-        for i in range(len(self.shans)-1):#понижает шанс
-                self.get_fish(i)#сохранение
-    def get_fish(self, i:int) ->Fish:#сохранение
-        ran=random.random()*100#выдает не целое число от 0 до 1 и умножает на 100
-        for i in range(0,100):#проходит 100 раз 
-            if (self.shans[i][0] <= ran & ran <= [i][1]):#шанс
-                id=i
-                if(id == None):
-                    return self.get_fish(id)
-                else:
-                    return Fish(self.vid[id], self.price[id], random.randint(*self.vid[i]))#соронение пораметров
-        return self.get_fish#конец
-        
+        for i in range(len(self.shans)-1):
+            fish = self.get_fish(i, ran)#сохранение
+            if fish != None:
+                return fish
+        return None
+
+    def get_fish(self, i:int, ran:int) ->Fish:#сохранение
+        if (self.shans[i][0] <= ran & ran <= [i][1]):#шанс
+            return Fish(self.vid[i], self.price[i], random.randint(*self.ves[i]))
+        else:
+            return None
