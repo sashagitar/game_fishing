@@ -4,12 +4,14 @@ class Prodykt:
     price=int()
     stats=int()
     id_ = int()
-    def __init__(self,id:str,vid:str,ves:int,price:int,stats:int):
+
+    def __init__(self,id_:str,vid:str,ves:int,price:int,stats:int):
         self.vid= vid
         self.ves= ves
         self.stats = stats
         self.price= price
-        self.id_ = self.id_
+        self.id_ = id_
+        
     def __str__(self) -> str:
         if self.id_ == 1:
             return f"{self.vid} Цена:{self.price} Сон + {self.stats} " 
