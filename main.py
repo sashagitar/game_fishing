@@ -1,3 +1,4 @@
+from fileinput import close
 from fish import Fish
 from fishing import Fishing
 from holodos import Holodos
@@ -12,8 +13,10 @@ PERS = Pers()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
+p = '\n'
+
 def fishing():
-    pass
+    FISHING.go_fishing
 
 def sadok():
     pass
@@ -36,8 +39,13 @@ def finish():
 def dayHaus():
     pass
 
-def exet():
-    pass
+def exit():
+    input('Вы уверны что хотите выйти:\n')
+    if ('yes') and ('y') and ('да') and ('+'):
+        input('\nНажмите ENTER, чтобы продолжить')
+        exit
+    if ('no') and ('n') and ('нет') and ('-'):
+        input('\nНажмите ENTER, чтобы продолжить')
 
 def hast():
     pass
@@ -68,15 +76,17 @@ def main():
         '3': magaz(),
         '4': sadok(),
         '5': dayHaus(),
-        '6': exet(),
+        '6': exit(),
         '7': hast(),
         '8': promo()
     }
+    switch(go,'Вы ввели неверное число')
 
 def  start():
     print('''Добро Пожалвать в Рыбалку!!! Здесь вам престоит ловить рыбу и продовать ее в магазине и 
     получать с этого деньги. В этой игре вы должны купить себе дом!! Не приятоной игры!!(ВЫХОДА НЕТ)!!''')
     input('\nНажмите ENTER, чтобы продолжить')
+    print(p*50)
 
 if __name__ == '__main__':
     start()
