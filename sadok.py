@@ -12,9 +12,9 @@ class Sadok:
     def add(self,f:Fish):
         self.sadok.append(f)
         self.n+=1
-        self.cost+=f.prise
+        self.cost+= f.price
         
-    def __str__(self,cost) -> str():
+    def __str__(self) -> str():
         s=''
         if self.n > 0:
             for i in self.sadok:
