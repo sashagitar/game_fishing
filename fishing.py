@@ -8,7 +8,7 @@ class Fishing: #класс рыбалка
     def __init__(self):#
         self.test_fish = Fish('test1',99,10)#тестовая рыба
 
-    def go_fishing(self):#начало рыалки   
+    def go_fishing(self)->Fish:#начало рыалки   
         ran=random.random()*100#выдает не целое число от 0 до 1 и умножает на 100
         for i in range(len(self.shans)-1):
             fish = self.get_fish(i, ran)#сохранение
