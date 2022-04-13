@@ -21,3 +21,5 @@ class Fishing: #класс рыбалка
             return Fish(self.vid[i], self.price[i], random.randint(*self.ves[i]))
         else:
             return None
+
+    
