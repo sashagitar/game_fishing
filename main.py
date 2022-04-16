@@ -13,15 +13,19 @@ SADOK = Sadok()
 HOLODOS = Holodos()
 
 def fishing():
+    print ('\n'*20)
+    FISHING.go_fishing
     pass
 
 def sadok():
+    print ('\n'*20)
     pass
 
 def eat():
     pass
 
 def magaz():
+    print ('\n'*20)
     pass
 
 def sleep():
@@ -34,13 +38,19 @@ def finish():
     pass
 
 def dayHaus():
+    print ('\n'*20)
     pass
 
-def exet():
-    pass
-
-
+def exit():
+    print ('\n'*20)
+    input('Вы уверны что хотите выйти:\n')
+    if ('да') and ('возможно') and ('1110010011100000'):
+        input('\nНажмите ENTER, чтобы продолжить')
+        exit()
+    if ('нет') and ('no') and ('111011011110010111110010'):
+        input('\nНажмите ENTER, чтобы продолжить')
 def main():
+    print ('\n'*20)
     PERS.chec()
     if PERS.chec() =='RIP':
         finish()
@@ -61,7 +71,7 @@ def main():
         '3': magaz(),
         '4': sadok(),
         '5': dayHaus(),
-        '6': exet(),
+        '6': exit(),#
     }
 
 def  start():
