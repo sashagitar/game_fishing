@@ -7,5 +7,4 @@ for i in range(4):
     g = f.go_fishing()
     if g != None:
         s.add(g)
-        
 print(s)
