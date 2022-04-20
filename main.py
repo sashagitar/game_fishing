@@ -1,3 +1,4 @@
+from numpy import product
 from fish import Fish
 from fishing import Fishing
 from holodos import Holodos
@@ -12,20 +13,46 @@ PERS = Pers()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
+
 def fishing():
     print ('\n'*20)
-    FISHING.go_fishing
-    pass
-
+    FISHING.go_fishing()
+    fish=FISHING.go_fishing()
+    if fish == None:
+        print('Эх соход')
+    else:
+        SADOK.add(fish)
+        print('Вы поймали :', fish)
 def sadok():
     print ('\n'*20)
-    pass
-
+    print(SADOK)
+    s = input('Вы хотететь продать кошке?')
+    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
+        PERS.money+=SADOK.bue()
+    else:
+        print("Вы обидели кошку.(Пощады не ждите)")
 def eat():
-    pass
+    print(HOLODOS)
+    чай=input('Вы берите еду')
+    
 
 def magaz():
     print ('\n'*20)
+    print(MAGAZ)
+    vib = input("Выберите еду для Шлёпы :")
+    if vib.isdigit():
+        product = MAGAZ.duy(int(vib))
+        if product !=None:
+            if PERS.money>=product.price:
+                PERS.money -= product.price
+                HOLODOS.add(product)
+            else:
+                print("У вас недостаточно средств")
+        else:
+            print('Вы ввели неверное число')
+    else:
+        print('Вы ввели неверное  не число!!')
+
     pass
 
 def sleep():
@@ -47,7 +74,7 @@ def exit():
     if ('да') and ('возможно') and ('1110010011100000'):
         input('\nНажмите ENTER, чтобы продолжить')
         exit()
-    if ('нет') and ('no') and ('111011011110010111110010'):
+    else:
         input('\nНажмите ENTER, чтобы продолжить')
 def main():
     print ('\n'*20)

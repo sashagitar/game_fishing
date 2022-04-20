@@ -6,6 +6,7 @@ class Magaz:
     stats = []#
     id_ = []#
     eda = []#
+
     def __init__(self) -> None:
         with open('magazin.csv', encoding = 'UTF-8') as csv_file:
             csv_reader = csv.reader(csv_file,delimiter = ';')
@@ -14,10 +15,17 @@ class Magaz:
                 self.price.append(int(row[1]))
                 self.stats.append(int(row[2]))
                 self.id_.append(int(row[3]))
+
     def __str__(self):
         s=''
         for i in range(len(self.name)):
-            s+=str(self.duy(i)+'\n')
+            s += str(self.duy(i))+'\n'
         return s
+        
     def duy(self, i):
-        return Prodykt(self.name[i], self.prise[i], self.stats[i], self.id_[i])
+        if i >= len(self.name):
+            return None
+        else:
+            return Prodykt(self.name[i], self.prise[i], self.stats[i], self.id_[i])
+ddd=Magaz()
+print (ddd)
