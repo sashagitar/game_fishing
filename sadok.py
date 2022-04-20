@@ -22,9 +22,3 @@ class Sadok:
             return s+'Общая стоимость: '+str(self.cost)+'\n'
         else:
             return 'Рыбы нет'
-    def bue(self):
-        pribel = self.cost
-        self.sadok = []
-        n = 0
-        cost = 0
-        return pribel
