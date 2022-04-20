@@ -1,4 +1,4 @@
-from fileinput import close
+from numpy import product
 from fish import Fish
 from fishing import Fishing
 from holodos import Holodos
@@ -13,18 +13,46 @@ PERS = Pers()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
-p = '\n'
 
 def fishing():
-    FISHING.go_fishing
-
+    print ('\n'*20)
+    FISHING.go_fishing()
+    fish=FISHING.go_fishing()
+    if fish == None:
+        print('Эх соход')
+    else:
+        SADOK.add(fish)
+        print('Вы поймали :', fish)
 def sadok():
-    pass
-
+    print ('\n'*20)
+    print(SADOK)
+    s = input('Вы хотететь продать кошке?')
+    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
+        PERS.money+=SADOK.bue()
+    else:
+        print("Вы обидели кошку.(Пощады не ждите)")
 def eat():
-    pass
+    print(HOLODOS)
+    чай=input('Вы берите еду')
+    
 
 def magaz():
+    print ('\n'*20)
+    print(MAGAZ)
+    vib = input("Выберите еду для Шлёпы :")
+    if vib.isdigit():
+        product = MAGAZ.duy(int(vib))
+        if product !=None:
+            if PERS.money>=product.price:
+                PERS.money -= product.price
+                HOLODOS.add(product)
+            else:
+                print("У вас недостаточно средств")
+        else:
+            print('Вы ввели неверное число')
+    else:
+        print('Вы ввели неверное  не число!!')
+
     pass
 
 def sleep():
@@ -37,23 +65,19 @@ def finish():
     pass
 
 def dayHaus():
+    print ('\n'*20)
     pass
 
 def exit():
+    print ('\n'*20)
     input('Вы уверны что хотите выйти:\n')
-    if ('yes') and ('y') and ('да') and ('+'):
+    if ('да') and ('возможно') and ('1110010011100000'):
         input('\nНажмите ENTER, чтобы продолжить')
-        exit
-    if ('no') and ('n') and ('нет') and ('-'):
+        exit()
+    else:
         input('\nНажмите ENTER, чтобы продолжить')
-
-def hast():
-    pass
-
-def promo():
-    pass
-
 def main():
+    print ('\n'*20)
     PERS.chec()
     if PERS.chec() =='RIP':
         finish()
@@ -66,8 +90,6 @@ def main():
     4. Садок
     5. Купить дом
     6. Выход
-    7. Настройки
-    8. Промокод
     ''')
     go = input('\n(Введите число или слово)\n')
     switch = {
@@ -76,17 +98,12 @@ def main():
         '3': magaz(),
         '4': sadok(),
         '5': dayHaus(),
-        '6': exit(),
-        '7': hast(),
-        '8': promo()
+        '6': exit(),#
     }
-    switch(go,'Вы ввели неверное число')
 
 def  start():
-    print('''Добро Пожалвать в Рыбалку!!! Здесь вам престоит ловить рыбу и продовать ее в магазине и 
-    получать с этого деньги. В этой игре вы должны купить себе дом!! Не приятоной игры!!(ВЫХОДА НЕТ)!!''')
+    print('''Добро Пожалвать в игру про рыбалку!(ВЫХОДА НЕТ)!''')
     input('\nНажмите ENTER, чтобы продолжить')
-    print(p*50)
 
 if __name__ == '__main__':
     start()
