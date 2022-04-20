@@ -1,9 +1,7 @@
-from fish import Fish
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
 from pers import Pers
-from prodykt import Prodykt
 from sadok import Sadok
 
 FISHING = Fishing()
@@ -12,20 +10,47 @@ PERS = Pers()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
+
 def fishing():
     print ('\n'*20)
-    FISHING.go_fishing
-    pass
-
+    FISHING.go_fishing()
+    fish=FISHING.go_fishing()
+    if fish == None:
+        print('Эх соход')
+    else:
+        SADOK.add(fish)
+        print('Вы поймали :', fish)
+    input()
 def sadok():
     print ('\n'*20)
-    pass
-
+    print(SADOK)
+    s = input('Вы хотететь продать кошке?')
+    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
+        PERS.money+=SADOK.bue()
+    else:
+        print("Вы обидели кошку.(Пощады не ждите)")
 def eat():
-    pass
+    print(HOLODOS)
+    чай=input('Вы берите еду')
+    
 
 def magaz():
     print ('\n'*20)
+    print(MAGAZ)
+    vib = input("Выберите еду для Шлёпы :")
+    if vib.isdigit():
+        product = MAGAZ.duy(int(vib))
+        if product !=None:
+            if PERS.money>=product.price:
+                PERS.money -= product.price
+                HOLODOS.add(product)
+            else:
+                print("У вас недостаточно средств")
+        else:
+            print('Вы ввели неверное число')
+    else:
+        print('Вы ввели неверное  не число!!')
+
     pass
 
 def sleep():
@@ -41,13 +66,23 @@ def dayHaus():
     print ('\n'*20)
     pass
 
-def exet():
+def exit():
     print ('\n'*20)
-    w=input('Вы уверины что хотите выйти из игры?')
-    if w == 'да':
+    input('Вы уверны что хотите выйти:\n')
+    if ('да') and ('возможно') and ('1110010011100000'):
+        input('\nНажмите ENTER, чтобы продолжить')
         exit()
-    pass
+    else:
+        input('\nНажмите ENTER, чтобы продолжить')
 
+def choise(go:str):
+    if go == '1':
+        fishing()
+    elif go =='2':
+        eat()
+    else:
+        print('вы ввели не верное действие')
+    
 
 def main():
     print ('\n'*20)
@@ -65,14 +100,8 @@ def main():
     6. Выход
     ''')
     go = input('\n(Введите число или слово)\n')
-    switch = {
-        '1': fishing(),
-        '2': eat(),
-        '3': magaz(),
-        '4': sadok(),
-        '5': dayHaus(),
-        '6': exet(),
-    }
+    choise(go)
+    main()
 
 def  start():
     print('''Добро Пожалвать в игру про рыбалку!(ВЫХОДА НЕТ)!''')

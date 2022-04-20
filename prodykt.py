@@ -1,4 +1,3 @@
-from magaz import Magaz
 class Prodykt:
     vid=str()
     price=int()
