@@ -1,3 +1,4 @@
+from numpy import product
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
@@ -31,17 +32,20 @@ def sadok():
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
 
-def eat(self,id_,golod,stats,son,happy):
+def eat(self,id_,golod,stats,son,happy,product):
     print(HOLODOS)
     tea =input('Вы берите еду')
     if tea == ():
         if id_ == 1:
             son +=stats
+            HOLODOS -=id_[tea]
         if id_ == 2:
             happy +=stats
+            HOLODOS -=id_[tea]
         else:
             golod+=stats
-            
+            HOLODOS -=id_[tea]
+
     else:
         print('Вы ввели неверное  не число!!')
     input('\nНажмите ENTER, чтобы продолжить')
