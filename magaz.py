@@ -23,7 +23,4 @@ class Magaz:
         return s
         
     def duy(self, i):
-        if i >= len(self.name):
-            return None
-        else:
-            return Prodykt(self.name[i], self.prise[i], self.stats[i], self.id_[i])
+        return Prodykt(self.name[i], self.prise[i], self.stats[i], self.id_[i])

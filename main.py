@@ -1,10 +1,7 @@
-from numpy import product
-from fish import Fish
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
 from pers import Pers
-from prodykt import Prodykt
 from sadok import Sadok
 
 FISHING = Fishing()
@@ -23,6 +20,8 @@ def fishing():
     else:
         SADOK.add(fish)
         print('Вы поймали :', fish)
+    input()
+
 def sadok():
     print ('\n'*20)
     print(SADOK)
@@ -31,10 +30,21 @@ def sadok():
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
-def eat():
+
+def eat(self,id_,golod,stats,son,happy):
     print(HOLODOS)
-    чай=input('Вы берите еду')
-    
+    tea =input('Вы берите еду')
+    if tea == ():
+        if id_ == 1:
+            son +=stats
+        if id_ == 2:
+            happy +=stats
+        else:
+            golod+=stats
+            
+    else:
+        print('Вы ввели неверное  не число!!')
+    input('\nНажмите ENTER, чтобы продолжить')
 
 def magaz():
     print ('\n'*20)
@@ -76,6 +86,16 @@ def exit():
         exit()
     else:
         input('\nНажмите ENTER, чтобы продолжить')
+
+def choise(go:str):
+    if go == '1':
+        fishing()
+    elif go =='2':
+        eat()
+    else:
+        print('вы ввели не верное действие')
+    
+
 def main():
     print ('\n'*20)
     PERS.chec()
@@ -92,14 +112,8 @@ def main():
     6. Выход
     ''')
     go = input('\n(Введите число или слово)\n')
-    switch = {
-        '1': fishing(),
-        '2': eat(),
-        '3': magaz(),
-        '4': sadok(),
-        '5': dayHaus(),
-        '6': exit(),#
-    }
+    choise(go)
+    main()
 
 def  start():
     print('''Добро Пожалвать в игру про рыбалку!(ВЫХОДА НЕТ)!''')
