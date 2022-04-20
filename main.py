@@ -31,9 +31,20 @@ def sadok():
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
 
-def eat():
+def eat(self,id_,golod,stats,son,happy,product):
     print(HOLODOS)
-    чай=input('Вы берите еду')
+    tea =input('Вы берите еду')
+    if tea == ():
+        if id_ == 1:
+            HOLODOS -=id_[tea]
+        if id_ == 2:
+            HOLODOS -=id_[tea]
+        else:
+            HOLODOS -=id_[tea]
+
+    else:
+        print('Вы ввели неверное  не число!!')
+    input('\nНажмите ENTER, чтобы продолжить')
 
     
 
