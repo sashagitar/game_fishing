@@ -1,3 +1,4 @@
+import csv
 from numpy import product
 from fishing import Fishing
 from holodos import Holodos
@@ -35,13 +36,19 @@ def sadok():
 def eat():
     print(HOLODOS)
     tea=input('Вы берите еду')
-    aa = tea.isnumeric()
-    if aa == True :
-        PERS.golod,PERS.son,PERS.happy += 0,1,2
+    if tea.isnumeric() == True :
+        if product.id_ == 0:
+            PERS.golod += product.stats.append(int(row[2]))
+        if product.id_ == 1:
+            PERS.son += product.stats.append(int(row[2]))
+        if product.id_ == 2:
+            PERS.happy += product.stats.append(int(row[2]))
+        else:
+            print('Ошибка')
         product=Holodos.delet(int(tea))
         print('Вы накормили шлёпу',product)
         input('\nНажмите ENTER, чтобы продолжить')
-    if aa == False :
+    if tea.isnumeric() == False :
         print('Вы ввели буквы!!!')
         input('\nНажмите ENTER, чтобы продолжить')
     else:
