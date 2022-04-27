@@ -8,7 +8,7 @@ class Holodos:
     def add(self,prodykt:Prodykt):
         self.eda.append(prodykt)
 
-    def delet(self, id_:int) ->Prodykt:
+    def delete(self, id_:int) ->Prodykt:
         if len (self.eda)> id_ >=0:
             prodykt=self.eda[id_]
             self.eda.pop(id_)
