@@ -32,20 +32,20 @@ def sadok():
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
 
-def eat(self,id_,golod,stats,son,happy,product):
+def eat():
     print(HOLODOS)
     tea =input('Вы берите еду')
-    if tea == ():
-        if id_ == 1:
-            son +=stats
-            HOLODOS -=id_[tea]
-        if id_ == 2:
-            happy +=stats
-            HOLODOS -=id_[tea]
-        else:
-            golod+=stats
-            HOLODOS -=id_[tea]
-
+    if product.id_<HOLODOS>0:
+        if tea == ():
+            if product.id_ == 1:
+                PERS.son +=product.stats
+                product=Holodos.delet(int(tea))
+            if product.id_ == 2:
+                PERS.happy +=product.stats
+                product=Holodos.delet(int(tea))
+            else:
+                PERS.golod+=product.stats
+                product=Holodos.delet(int(tea))
     else:
         print('Вы ввели неверное  не число!!')
     input('\nНажмите ENTER, чтобы продолжить')
