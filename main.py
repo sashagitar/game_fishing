@@ -1,3 +1,5 @@
+from itertools import product
+from re import A
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
@@ -10,6 +12,10 @@ PERS = Pers()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
+p = \n
+PERS.golod = a
+PERS.happy = b
+PERS.son = c
 
 def fishing():
     print ('\n'*20)
@@ -34,11 +40,17 @@ def sadok():
 def eat():
     print(HOLODOS)
     tea=input('Вы берите еду(Номер прдукта!!!!)')
-    if (tea.isnumeric()):
-    input('\n\nНажмите ENTER, чтобы продолжить')
-    if ('да') and ('yes') and ('+'):
-        PERS.golod,PERS.son,PERS.happy += 0,1,2
-        roduct = Holodos.delet(int(tea))
+    if tea.isnumeric() == True :
+        product=Holodos.delet(int(tea))
+        if product != None
+        if product.id_ == 0:
+            PERS.golod += product.stats
+        if product.id_ == 1:
+            PERS.son += product.stats
+        if product.id_ == 2:
+            PERS.happy += product.stats
+        else:
+            print('Ошибка NOOOOO')
         print('Вы накормили Серегу:,\n produkt')
         input('\n\nНажмите ENTER, чтобы продолжить')
         print(p*50)
