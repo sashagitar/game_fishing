@@ -76,12 +76,15 @@ def exit():
         input('\nНажмите ENTER, чтобы продолжить')
 
 def choise(go:str):
-    if go == '1':
-        fishing()
-    elif go =='2':
-        eat()
-    else:
-        print('вы ввели не верное действие')
+    swith = {
+        '1' : fishing,
+        '2' : eat,
+        '3' : magaz,
+        '4' : sadok,
+        '5' : dayHaus,
+        '6' : exit
+    }
+    swith.get(go, lambda: 'вы ввели не верное число')()
     
 
 def main():
