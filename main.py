@@ -30,17 +30,21 @@ def sadok():
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку")
-def eat():
 
+def eat():
     print(HOLODOS)
-    tea=input('Вы берите еду')
-    if product.id_ >=HOLODOS>0:
+    tea=input('Вы берите еду(Номер прдукта!!!!)')
+    if (tea.isnumeric()):
+    input('\n\nНажмите ENTER, чтобы продолжить')
+    if ('да') and ('yes') and ('+'):
         PERS.golod,PERS.son,PERS.happy += 0,1,2
-        product=Holodos.delet(int(tea))
-        print('Вы накормили Серегу',product)
+        roduct = Holodos.delet(int(tea))
+        print('Вы накормили Серегу:,\n produkt')
+        input('\n\nНажмите ENTER, чтобы продолжить')
+        print(p*50)
     else:
-        print('Вы ввели неверное  не число!!')
-        input('\nНажмите ENTER, чтобы продолжить')
+        print('вы ввели не верное число!!!')
+        input('\n\nНажмите ENTER, чтобы продолжить')
 
 def magaz():
     print ('\n'*20)
