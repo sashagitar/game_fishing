@@ -31,31 +31,23 @@ def sadok():
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
 
-def eat():
-    print(HOLODOS)
-    tea =input('Вы берите еду')
-    if product.id_<HOLODOS>0:
-        if tea == ():
-            if product.id_ == 1:
-                PERS.son +=product.stats
-                product=Holodos.delet(int(tea))
-            if product.id_ == 2:
-                PERS.happy +=product.stats
-                product=Holodos.delet(int(tea))
-            else:
-                PERS.golod+=product.stats
-                product=Holodos.delet(int(tea))
 
 def eat():
     print(HOLODOS)
     tea=input('Вы берите еду')
-    if product.id_ >=HOLODOS>0:
+    aa = tea.isnumeric()
+    if aa == True :
         PERS.golod,PERS.son,PERS.happy += 0,1,2
         product=Holodos.delet(int(tea))
         print('Вы накормили шлёпу',product)
-    else:
-        print('Вы ввели неверное  не число!!')
         input('\nНажмите ENTER, чтобы продолжить')
+    if aa == False :
+        print('Вы ввели буквы!!!')
+        input('\nНажмите ENTER, чтобы продолжить')
+    else:
+        print('Вы ввели неверное число!!')
+        input('\nНажмите ENTER, чтобы продолжить')
+
 
 def magaz():
     print ('\n'*20)
@@ -74,7 +66,6 @@ def magaz():
     else:
         print('Вы ввели неверное  не число!!')
 
-    pass
 
 def sleep():
     pass
