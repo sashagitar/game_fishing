@@ -4,11 +4,11 @@ from magaz import Magaz
 from pers import Pers
 from sadok import Sadok
 
-FISHING = Fishing
-MAGAZ = Magaz
-PERS = Pers
-SADOK = Sadok
-HOLODOS = Holodos
+FISHING = Fishing()
+MAGAZ = Magaz()
+PERS = Pers()
+SADOK = Sadok()
+HOLODOS = Holodos()
 
 
 def fishing():
@@ -16,42 +16,34 @@ def fishing():
     FISHING.go_fishing()
     fish=FISHING.go_fishing()
     if fish == None:
-        print('Эх соход')
+        print('Эх укатилась рыбешка')
     else:
         SADOK.add(fish)
         print('Вы поймали :', fish)
     input()
-
 def sadok():
     print ('\n'*20)
     print(SADOK)
     s = input('Вы хотететь продать кошке?')
-    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
+    if s== ('да') and ('yes') and ('+'):
         PERS.money+=SADOK.bue()
     else:
-        print("Вы обидели кошку.(Пощады не ждите)")
-
-def eat(self,id_,golod,stats,son,happy,product):
+        print("Вы обидели кошку")
+def eat():
     print(HOLODOS)
-    tea =input('Вы берите еду')
-    if tea == ():
-        if id_ == 1:
-            HOLODOS -=id_[tea]
-        if id_ == 2:
-            HOLODOS -=id_[tea]
-        else:
-            HOLODOS -=id_[tea]
-
+    tea=input('Вы берите еду')
+    if product.id_ >=HOLODOS>0:
+        PERS.golod,PERS.son,PERS.happy += 0,1,2
+        product=Holodos.delet(int(tea))
+        print('Вы накормили Серегу',product)
     else:
         print('Вы ввели неверное  не число!!')
-    input('\nНажмите ENTER, чтобы продолжить')
-
-    
+        input('\nНажмите ENTER, чтобы продолжить')
 
 def magaz():
     print ('\n'*20)
     print(MAGAZ)
-    vib = input("Выберите еду для Шлёпы :")
+    vib = input("Выберите еду для Сереги :")
     if vib.isdigit():
         product = MAGAZ.duy(int(vib))
         if product !=None:
@@ -83,7 +75,7 @@ def dayHaus():
 def exit():
     print ('\n'*20)
     input('Вы уверны что хотите выйти:\n')
-    if ('да') and ('возможно') and ('1110010011100000'):
+    if ('да') and ('yes') and ('+'):
         input('\nНажмите ENTER, чтобы продолжить')
         exit()
     else:
@@ -118,7 +110,7 @@ def main():
     main()
 
 def  start():
-    print('''Добро Пожалвать в игру про рыбалку!(ВЫХОДА НЕТ)!''')
+    print('''Добро Пожалвать в игру про рыбалку! Не приятной игры!!!(ВЫХОДА НЕТ)!''')
     input('\nНажмите ENTER, чтобы продолжить')
 
 if __name__ == '__main__':
