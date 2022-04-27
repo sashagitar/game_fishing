@@ -22,7 +22,6 @@ def fishing():
         SADOK.add(fish)
         print('Вы поймали :', fish)
     input()
-
 def sadok():
     print ('\n'*20)
     print(SADOK)
@@ -46,9 +45,17 @@ def eat():
             else:
                 PERS.golod+=product.stats
                 product=Holodos.delet(int(tea))
+
+def eat():
+    print(HOLODOS)
+    tea=input('Вы берите еду')
+    if product.id_ >=HOLODOS>0:
+        PERS.golod,PERS.son,PERS.happy += 0,1,2
+        product=Holodos.delet(int(tea))
+        print('Вы накормили шлёпу',product)
     else:
         print('Вы ввели неверное  не число!!')
-    input('\nНажмите ENTER, чтобы продолжить')
+        input('\nНажмите ENTER, чтобы продолжить')
 
 def magaz():
     print ('\n'*20)
