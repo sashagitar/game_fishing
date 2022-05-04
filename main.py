@@ -124,8 +124,22 @@ def finish():
     pass
 
 def dayHaus():
-    print ('\n'*20)
-    pass
+    if PERS.money > 1000000:
+        print('Вам хвотает денег!!\n')
+        day = input('Ходите купить дом?\n')
+        if ('да') and ('yes'):
+            PERS.money -= 1000000
+            PERS.home += 'Дом'
+            print('ПОЗДРАВЛЯЮ!! Вы купили дом')
+            print('Игра окончина!!!')
+            exit()
+        else:
+            if ('нет') and ('no'):
+                input('\nНажмите ENTER, чтобы продолжить')
+    if PERS.money < 1000000:
+        print('Вам недостаточно денег!!')
+        input('\nНажмите ENTER, чтобы продолжить')
+        print ('\n'*20)
 
 def exit():
     print ('\n'*20)

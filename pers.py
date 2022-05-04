@@ -4,13 +4,15 @@ class Pers:
     son=int()
     golod=int()
     money=int()
+    home=int()
     happy=int()
 
     def __init__(self):
         self.hp = 100
         self.sleep = 100
         self.golod = 100
-        self.money = 500
+        self.money = 50000000000
+        self.home = 'Бездомный'
         self.happy = 100
 
     def chec(self):
