@@ -88,13 +88,12 @@ def happe():
         2.Пойти в бар
         3.Пойти в ночной клуб
         4.Посмотреть телевизор
-        5.Поспать 
     ''')
     perehod = input('Выберите действие(НОМЕР!!!):\n')
     try:
         if (perehod == '') :
             print('Введено неправлельное значение')
-        elif int(perehod) > 5 :
+        elif int(perehod) > 4 :
             print('Введено неправлельное значение')
     except ValueError:
             print('Введено неправлельное значение')
@@ -118,13 +117,7 @@ def happe():
             PERS.sleep -= 30
             PERS.golod += 20
             PERS.happy  += 10
-    if perehod.lower() == '5' :
-        ###Если день
-            PERS.sleep = 100
-            PERS.live = 100
-            PERS.golod = 20
-    else:
-        print('Вы достаточно поспали')
+
     input('\n\nНажмите ENTER, чтобы продолжить')
     print('\n'*50)
 
