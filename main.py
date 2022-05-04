@@ -1,3 +1,4 @@
+from numpy import product
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
@@ -29,10 +30,32 @@ def sadok():
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
-def eat():
+
+
+def holodos():
     print(HOLODOS)
-    чай=input('Вы берите еду')
-    
+    tea=input('Вы берите еду')
+    if tea.isdigit() == True : 
+        product=Holodos.delete(int(tea))
+        if product != None:
+            if product.id_ == 0:
+                PERS.golod += product.stats
+            if product.id_ == 1:
+                PERS.son += product.stats
+            if product.id_ == 2:
+                PERS.happy += product.stats
+            else:
+                print('Ошибка')
+       
+        print('Вы накормили шлёпу',product)
+        input('\nНажмите ENTER, чтобы продолжить')
+    if tea.isnumeric() == False :
+        print('Вы ввели буквы!!!')
+        input('\nНажмите ENTER, чтобы продолжить')
+    else:
+        print('Вы ввели неверное число!!')
+        input('\nНажмите ENTER, чтобы продолжить')
+
 
 def magaz():
     print ('\n'*20)
@@ -51,7 +74,6 @@ def magaz():
     else:
         print('Вы ввели неверное  не число!!')
 
-    pass
 
 def sleep():
     pass
@@ -78,7 +100,7 @@ def exit():
 def choise(go:str):
     swith = {
         '1' : fishing,
-        '2' : eat,
+        '2' : holodos,
         '3' : magaz,
         '4' : sadok,
         '5' : dayHaus,
