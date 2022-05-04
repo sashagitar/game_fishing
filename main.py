@@ -117,7 +117,6 @@ def happe():
             PERS.sleep -= 30
             PERS.golod += 20
             PERS.happy  += 10
-
     input('\n\nНажмите ENTER, чтобы продолжить')
     print('\n'*50)
 
