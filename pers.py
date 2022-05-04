@@ -8,7 +8,7 @@ class Pers:
 
     def __init__(self):
         self.hp = 100
-        self.son = 100
+        self.sleep = 100
         self.golod = 100
         self.money = 500
         self.happy = 100
