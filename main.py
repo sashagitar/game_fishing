@@ -1,4 +1,3 @@
-from numpy import product
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
@@ -83,7 +82,87 @@ def sleep():
     pass
 
 def happe():
-    pass
+    print('''
+    Выберите действие:
+        1.Поиграть в футбол
+        2.Пойти в бар
+        3.Пойти в ночной клуб
+        4.Посмотреть телевизор
+        5.Поспать 
+    ''')
+    perehod = input('Выберите действие(НОМЕР!!!):\n')
+    try:
+        if (perehod == '') :
+            print('Введено неправлельное значение')
+        elif int(perehod) > 5 :
+            print('Введено неправлельное значение')
+    except ValueError:
+            print('Введено неправлельное значение')
+    if perehod == '1' :
+        if (Time >= 9) and (Time < 21): ###Если день
+            sleep -= 10
+            eat -= 10
+            happy += 30
+            Time += 2
+        else: ###Если ночь
+            sleep -= 20
+            eat -= 10
+            happy += 20
+            Time += 3
+    if perehod.lower() == '2' :
+        if (Time >= 9) and (Time < 21): ###Если день
+            sleep -= 30
+            eat += 20
+            happy  += 10
+            Time += 6
+        else: ###Если ночь
+            sleep -= 50
+            eat += 10
+            happy  += 20
+            Time += 3
+    if perehod.lower() == '3' :
+        if (Time >= 9) and (Time < 21): ###Если день
+            sleep -= 10
+            eat -= 30
+            happy += 89
+            Time += 5
+        else: ###Если ночь
+            sleep -= 30
+            eat += 30
+            happy  += 99
+            Time += 9
+    if perehod.lower() == '4' :
+        if (Time >= 9) and (Time < 21): ###Если день
+            sleep -= 30
+            eat += 20
+            happy  += 10
+            Time += 6
+        else: ###Если ночь
+            sleep -= 10
+            eat += 10
+            happy  += 20
+            Time += 3
+    if perehod.lower() == '5' :
+        if sleep < 70 :
+            if (Time >= 9) and (Time < 21): ###Если день
+                sleep = 100
+                live = 100
+                eat = 20
+                Time += 2
+            elif (Time >= 21) | ((Time >= 0 ) & (Time < 6)): ###Если ночь
+                sleep = 100
+                live = 100
+                eat = 15
+                Time += 6
+            elif Time == 6 :
+                sleep = 70
+                live = 100
+                eat = 5
+                Time += 3
+        else:
+            print('Вы достаточно поспали')
+    input('\n\nНажмите ENTER, чтобы продолжить')
+    print('\n'*50)
 
 def finish():
     pass
