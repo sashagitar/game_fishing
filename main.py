@@ -1,12 +1,12 @@
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
-from pers import Pers
+from PERS import PERS
 from sadok import Sadok
 
 FISHING = Fishing()
 MAGAZ = Magaz()
-PERS = Pers()
+PERS = PERS()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
@@ -100,65 +100,54 @@ def happe():
             print('Введено неправлельное значение')
     if perehod == '1' :
         if (Time >= 9) and (Time < 21): ###Если день
-            sleep -= 10
-            eat -= 10
-            happy += 30
-            Time += 2
+            PERS.sleep -= 10
+            PERS.eat -= 10
+            PERS.happy += 30
         else: ###Если ночь
-            sleep -= 20
-            eat -= 10
-            happy += 20
-            Time += 3
+            PERS.sleep -= 20
+            PERS.eat -= 10
+            PERS.happy += 20
     if perehod.lower() == '2' :
         if (Time >= 9) and (Time < 21): ###Если день
-            sleep -= 30
-            eat += 20
-            happy  += 10
-            Time += 6
+            PERS.sleep -= 30
+            PERS.eat += 20
+            PERS.happy  += 10
         else: ###Если ночь
-            sleep -= 50
-            eat += 10
-            happy  += 20
-            Time += 3
+            PERS.sleep -= 50
+            PERS.eat += 10
+            PERS.happy  += 20
     if perehod.lower() == '3' :
         if (Time >= 9) and (Time < 21): ###Если день
-            sleep -= 10
-            eat -= 30
-            happy += 89
-            Time += 5
+            PERS.sleep -= 10
+            PERS.eat -= 30
+            PERS.happy += 89
         else: ###Если ночь
-            sleep -= 30
-            eat += 30
-            happy  += 99
-            Time += 9
+            PERS.sleep -= 30
+            PERS.eat += 30
+            PERS.happy  += 99
     if perehod.lower() == '4' :
         if (Time >= 9) and (Time < 21): ###Если день
-            sleep -= 30
-            eat += 20
-            happy  += 10
-            Time += 6
+            PERS.sleep -= 30
+            PERS.eat += 20
+            PERS.happy  += 10
         else: ###Если ночь
-            sleep -= 10
-            eat += 10
-            happy  += 20
-            Time += 3
+            PERS.sleep -= 10
+            PERS.eat += 10
+            PERS.happy  += 20
     if perehod.lower() == '5' :
         if sleep < 70 :
             if (Time >= 9) and (Time < 21): ###Если день
-                sleep = 100
-                live = 100
-                eat = 20
-                Time += 2
+                PERS.sleep = 100
+                PERS.live = 100
+                PERS.eat = 20
             elif (Time >= 21) | ((Time >= 0 ) & (Time < 6)): ###Если ночь
-                sleep = 100
-                live = 100
-                eat = 15
-                Time += 6
+                PERS.sleep = 100
+                PERS.live = 100
+                PERS.eat = 15
             elif Time == 6 :
-                sleep = 70
-                live = 100
-                eat = 5
-                Time += 3
+                PERS.sleep = 70
+                PERS.live = 100
+                PERS.eat = 5
         else:
             print('Вы достаточно поспали')
     input('\n\nНажмите ENTER, чтобы продолжить')
