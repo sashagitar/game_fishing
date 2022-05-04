@@ -1,5 +1,4 @@
-from itertools import product
-from re import A
+from numpy import product
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
@@ -12,56 +11,60 @@ PERS = Pers()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
-p = \n
-PERS.golod = a
-PERS.happy = b
-PERS.son = c
 
 def fishing():
     print ('\n'*20)
     FISHING.go_fishing()
     fish=FISHING.go_fishing()
     if fish == None:
-        print('Эх укатилась рыбешка')
+        print('Эх соход')
     else:
         SADOK.add(fish)
         print('Вы поймали :', fish)
     input()
-
 def sadok():
     print ('\n'*20)
     print(SADOK)
     s = input('Вы хотететь продать кошке?')
-    if s== ('да') and ('yes') and ('+'):
+    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
         PERS.money+=SADOK.bue()
     else:
-        print("Вы обидели кошку")
+        print("Вы обидели кошку.(Пощады не ждите)")
 
-def eat():
+
+def holodos():
     print(HOLODOS)
-    tea=input('Вы берите еду(Номер прдукта!!!!)')
-    if tea.isnumeric() == True :
-        product=Holodos.delet(int(tea))
-        if product != None
-        if product.id_ == 0:
-            PERS.golod += product.stats
-        if product.id_ == 1:
-            PERS.son += product.stats
-        if product.id_ == 2:
-            PERS.happy += product.stats
+    tea=input('Вы берите еду')
+    if tea.isdigit() == True : 
+        product=Holodos.delete(int(tea))
+        if product != None:
+            if product.id_ == 0:
+                PERS.golod += product.stats
+            if product.id_ == 1:
+                PERS.son += product.stats
+            if product.id_ == 2:
+                PERS.happy += product.stats
+            else:
+                print("Ошибка")
         else:
-            print('Ошибка NOOOOO')
-        print('Вы накормили Серегу:,\n produkt')
-        input('\n\nНажмите ENTER, чтобы продолжить')
-        print(p*50)
+            print('Вы ввели неверное число')
     else:
-        print('вы ввели не верное число!!!')
-        input('\n\nНажмите ENTER, чтобы продолжить')
+        print('Вы ввели неверное  не число!!')
+       
+        print('Вы накормили шлёпу',product)
+        input('\nНажмите ENTER, чтобы продолжить')
+    if tea.isnumeric() == False :
+        print('Вы ввели буквы!!!')
+        input('\nНажмите ENTER, чтобы продолжить')
+    else:
+        print('Вы ввели неверное число!!')
+        input('\nНажмите ENTER, чтобы продолжить')
+
 
 def magaz():
     print ('\n'*20)
     print(MAGAZ)
-    vib = input("Выберите еду для Сереги :")
+    vib = input("Выберите еду для Шлёпы :")
     if vib.isdigit():
         product = MAGAZ.duy(int(vib))
         if product !=None:
@@ -92,19 +95,22 @@ def dayHaus():
 def exit():
     print ('\n'*20)
     input('Вы уверны что хотите выйти:\n')
-    if ('да') and ('yes') and ('+'):
+    if ('да') and ('возможно') and ('1110010011100000'):
         input('\nНажмите ENTER, чтобы продолжить')
         exit()
     else:
         input('\nНажмите ENTER, чтобы продолжить')
 
 def choise(go:str):
-    if go == '1':
-        fishing()
-    elif go =='2':
-        eat()
-    else:
-        print('вы ввели не верное действие')
+    swith = {
+        '1' : fishing,
+        '2' : holodos,
+        '3' : magaz,
+        '4' : sadok,
+        '5' : dayHaus,
+        '6' : exit
+    }
+    swith.get(go, lambda: 'вы ввели не верное число')()
     
 
 def main():
@@ -127,7 +133,7 @@ def main():
     main()
 
 def  start():
-    print('''Добро Пожалвать в игру про рыбалку! Не приятной игры!!!(ВЫХОДА НЕТ)!''')
+    print('''Добро Пожалвать в игру про рыбалку!(ВЫХОДА НЕТ)!''')
     input('\nНажмите ENTER, чтобы продолжить')
 
 if __name__ == '__main__':
