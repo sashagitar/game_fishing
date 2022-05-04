@@ -45,7 +45,11 @@ def holodos():
             if product.id_ == 2:
                 PERS.happy += product.stats
             else:
-                print('Ошибка')
+                print("Ошибка")
+        else:
+            print('Вы ввели неверное число')
+    else:
+        print('Вы ввели неверное  не число!!')
        
         print('Вы накормили шлёпу',product)
         input('\nНажмите ENTER, чтобы продолжить')
