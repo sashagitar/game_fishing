@@ -10,4 +10,3 @@ class Fish:
         return f"{self.vid} Цена:{self.price} Вес:{self.ves} " 
     def sell(self)->int:        
         return self.price
-        

@@ -8,13 +8,10 @@ class Holodos:
     def add(self,prodykt:Prodykt):
         self.eda.append(prodykt)
 
-    def delete(self, id_:int) ->Prodykt:
-        if len (self.eda)> id_ >=0:
-            prodykt=self.eda[id_]
-            self.eda.pop(id_)
-            return prodykt
-        else:
-            return None
+    def delet(self, id_:int) ->Prodykt:
+        prodykt=self.eda[id_]
+        self.eda.pop(id_)
+        return prodykt
         
     def __str__(self) -> str:
         s=''
