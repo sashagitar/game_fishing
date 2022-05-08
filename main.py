@@ -65,8 +65,20 @@ def exet():
     w=input('Вы уверины что хотите выйти из игры?')
     if w == 'да':
         exit()
-    pass
+    else:
+        input('\нажмите ENTER, чтобы продолжить')
+    
 
+
+def choise(go:str):
+    if go =='1':
+        fishing()
+    elif go=='2':
+        eat()
+    else:
+        print('вы ввели неверное действие')
+
+    
 
 def main():
     print ('\n'*20)

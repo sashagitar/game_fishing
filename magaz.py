@@ -5,6 +5,7 @@ class Magazin:
     prise = []
     stat = []
     id_ = []
+    eda=[]
     def __init__(self):
         with open('magazin.csv',encoding='UTF-8') as csv_file:
             csv_readen=csv.reader(csv_file, delimiter=';')
