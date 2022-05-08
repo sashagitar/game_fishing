@@ -3,8 +3,9 @@ class Prodykt:
     price=int()
     stat=int()
     id=int()
-    def __init__(self,name:str,price:int,stat:int,id:int):
+    def __init__(self,name:str,ves:str,price:int,stat:int,id:int):
         self.name=name
+        self.ves=ves
         self.price=price
         self.stat=stat
         self.id=id
