@@ -1,3 +1,4 @@
+from prodykt import Prodykt
 from fishing import Fishing
 from holodos import Holodos
 from magaz import Magaz
@@ -29,7 +30,6 @@ def sadok():
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
-
 
 def holodos():
     print(HOLODOS)
@@ -78,7 +78,12 @@ def magaz():
         print('Вы ввели неверное  не число!!')
 
 
-def sleep():
+def son():
+    print(PERS)
+    ot=input('хотите поспать?')
+    if (ot=='yes'):
+        PERS.son+=100
+        PERS.happy=100
     pass
 
 def happe():
@@ -99,52 +104,58 @@ def happe():
             print('Введено неправлельное значение')
     if perehod == '1' :
             ###Если день
-            PERS.sleep -= 10
+            PERS.son -= 10
             PERS.golod -= 10
             PERS.happy += 30
     if perehod.lower() == '2' :
         ###Если день
-            PERS.sleep -= 30
+            PERS.son -= 30
             PERS.golod += 20
             PERS.happy  += 10
     if perehod.lower() == '3' :
         ###Если день
-            PERS.sleep -= 10
+            PERS.son -= 10
             PERS.golod -= 30
             PERS.happy += 89
     if perehod.lower() == '4' :
         ###Если день
-            PERS.sleep -= 30
+            PERS.son -= 30
             PERS.golod += 20
             PERS.happy  += 10
     input('\n\nНажмите ENTER, чтобы продолжить')
     print('\n'*50)
 
+
 def finish():
-    pass
+    #img = image.imread(r"mem.jpg")
+    #print(type(img))
+    #print(img.shape)
+    #plt.imshow(img)
+
+    #plt.show()
+    print('Вы умерли')
+    exit()
 
 def dayHaus():
-    if PERS.money > 1000000:
-        print('Вам хвотает денег!!\n')
-        day = input('Ходите купить дом?\n')
-        if ('да') and ('yes'):
+    if PERS.money < 1000000:
+        print('Вам не хвотает денег!!\n')
+    else:
+        sas = input('Ходите купить дом? \n')
+        if sas == ('да') and ('yes'):
             PERS.money -= 1000000
             PERS.home += 'Дом'
             print('ПОЗДРАВЛЯЮ!! Вы купили дом')
             print('Игра окончина!!!')
             exit()
         else:
-            if ('нет') and ('no'):
+            if sas== ('нет') and ('no'):
                 input('\nНажмите ENTER, чтобы продолжить')
-    if PERS.money < 1000000:
-        print('Вам недостаточно денег!!')
-        input('\nНажмите ENTER, чтобы продолжить')
-        print ('\n'*20)
+          
 
-def exit():
+def exit_():
     print ('\n'*20)
-    input('Вы уверны что хотите выйти:\n')
-    if ('да') and ('возможно') and ('1110010011100000'):
+    ass = input('Вы уверны что хотите выйти:\n')
+    if ass == ('да') and ('возможно') and ('1110010011100000'):
         input('\nНажмите ENTER, чтобы продолжить')
         exit()
     else:
@@ -153,12 +164,11 @@ def exit():
 def choise(go:str):
     swith = {
         '1' : fishing,
-        '2' : happe,
-        '3' : holodos,
-        '4' : magaz,
-        '5' : sadok,
-        '6' : dayHaus,
-        '7' : exit
+        '2' : holodos,
+        '3' : magaz,
+        '4' : sadok,
+        '5' : dayHaus,
+        '6' : exit_
     }
     swith.get(go, lambda: 'вы ввели не верное число')()
     
@@ -172,12 +182,11 @@ def main():
     print('''
     Выберите действие:
     1. Порыбачить
-    2. Развлечение
-    3. Покушать
-    4. Рынок
-    5. Садок
-    6. Купить дом
-    7. Выход
+    2. Покушать
+    3. Рынок
+    4. Садок
+    5. Купить дом
+    6. Выход
     ''')
     go = input('\n(Введите число или слово)\n')
     choise(go)

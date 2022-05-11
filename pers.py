@@ -9,11 +9,12 @@ class Pers:
 
     def __init__(self):
         self.hp = 100
-        self.sleep = 100
+        self.son = 100
         self.golod = 100
-        self.money = 50000000000
+        self.money = 50000000000000000000000000000000000000000000000000
         self.home = 'Бездомный'
         self.happy = 100
+
 
     def chec(self):
         if(self.golod<=0):
@@ -31,4 +32,5 @@ class Pers:
         Сон - {self.son} 
         Голод - {self.golod} 
         Счастье - {self.happy}
-        Деньги - {self.money}''')
+        Деньги - {self.money}
+        Дом - {self.home}''')
