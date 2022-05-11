@@ -22,11 +22,12 @@ def fishing():
         SADOK.add(fish)
         print('Вы поймали :', fish)
     input()
+
 def sadok():
     print ('\n'*20)
     print(SADOK)
     s = input('Вы хотететь продать кошке?')
-    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
+    if s== ('да') and ('возможно') and ('+'):
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
@@ -35,7 +36,7 @@ def holodos():
     print(HOLODOS)
     tea=input('Вы берите еду')
     if tea.isdigit() == True : 
-        product=Holodos.delete(int(tea))
+        product=Holodos.delet(int(tea))
         if product != None:
             if product.id_ == 0:
                 PERS.golod += product.stats
@@ -61,7 +62,6 @@ def holodos():
 
 
 def magaz():
-    print ('\n'*20)
     print(MAGAZ)
     vib = input("Выберите еду для Шлёпы :")
     if vib.isdigit():
@@ -76,6 +76,7 @@ def magaz():
             print('Вы ввели неверное число')
     else:
         print('Вы ввели неверное  не число!!')
+    print ('\n'*20)
 
 
 def son():
@@ -84,7 +85,6 @@ def son():
     if (ot=='yes'):
         PERS.son+=100
         PERS.happy=100
-    pass
 
 def happe():
     print('''
