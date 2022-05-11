@@ -1,3 +1,4 @@
+import random
 from matplotlib import image
 from matplotlib import pyplot as plt
 from prodykt import Prodykt
@@ -129,14 +130,24 @@ def happe():
 
 
 def finish():
-    #img = image.imread(r"mem.jpg")
-    #print(type(img))
-    #print(img.shape)
-    #plt.imshow(img)
-
-    #plt.show()
-    print('Вы умерли')
-    exit()
+    a = random.randint(0,100)
+    if a == 1:
+        img = image.imread(r"imagefish\mem.jpg")
+        print(type(img))
+        print(img.shape)
+        plt.imshow(img)
+        plt.show()
+        print("Легендарная концовка")
+        print('Вы умерли')
+        exit()
+    else:
+        img = image.imread(r"imagefish\Minecraft.jpg")
+        print(type(img))
+        print(img.shape)
+        plt.imshow(img)
+        plt.show()
+        print('Вы умерли')
+        exit()
 
 def dayHaus():
     if PERS.money < 1000000:
