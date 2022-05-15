@@ -16,6 +16,6 @@ class Holodos:
     def __str__(self) -> str:
         s=''
         for i in self.eda:
-            s+=str(self.eda[i])+'\n'
+            s+=str(i)
         return s
     

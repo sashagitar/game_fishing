@@ -12,7 +12,7 @@ class Magaz:
             csv_reader = csv.reader(csv_file,delimiter = ';')
             for row in csv_reader:
                 self.name.append(row[0])
-                self.price.append(row[1])
+                self.price.append(int(row[1]))
                 self.stats.append(int(row[2]))
                 self.id_.append(int(row[3]))
 
@@ -26,4 +26,4 @@ class Magaz:
         if i >= len(self.name):
             return None
         else:
-            return Prodykt(self.name[i], self.price[i], self.stats[i], self.id_[i])
+            return Prodykt(self.id_[i],self.name[i], self.price[i], self.stats[i])

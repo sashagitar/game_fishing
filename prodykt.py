@@ -3,7 +3,7 @@ class Prodykt:
     price=int()
     stats=int()
     id_ = int()
-    def __init__(self,id_:str,name:str,price:int,stats:int):
+    def __init__(self,id_:str,name:str,price:int,stats):
         self.name= name
         self.stats = stats
         self.price= price

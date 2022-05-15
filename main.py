@@ -8,6 +8,7 @@ from magaz import Magaz
 from pers import Pers
 from sadok import Sadok
 
+
 FISHING = Fishing()
 MAGAZ = Magaz()
 PERS = Pers()
@@ -29,7 +30,7 @@ def sadok():
     print ('\n'*20)
     print(SADOK)
     s = input('Вы хотететь продать кошке?')
-    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
+    if s== ('да') and ('возможно') and ('+'):
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
@@ -38,7 +39,7 @@ def holodos():
     print(HOLODOS)
     tea=input('Вы берите еду')
     if tea.isdigit() == True : 
-        product=Holodos.delete(int(tea))
+        product=Holodos.delet(int(tea))
         if product != None:
             if product.id_ == 0:
                 PERS.golod += product.stats
@@ -52,7 +53,6 @@ def holodos():
             print('Вы ввели неверное число')
     else:
         print('Вы ввели неверное  не число!!')
-       
         print('Вы накормили шлёпу',product)
         input('\nНажмите ENTER, чтобы продолжить')
     if tea.isnumeric() == False :
@@ -64,11 +64,10 @@ def holodos():
 
 
 def magaz():
-    print ('\n'*20)
     print(MAGAZ)
-    vib = input("Выберите еду для Шлёпы :")
-    if vib.isdigit():
-        product = MAGAZ.duy(int(vib))
+    mas = input("Выберите еду для Шлёпы :")
+    if mas.isdigit():
+        product = MAGAZ.duy(int(mas))
         if product !=None:
             if PERS.money>=product.price:
                 PERS.money -= product.price
@@ -79,6 +78,7 @@ def magaz():
             print('Вы ввели неверное число')
     else:
         print('Вы ввели неверное  не число!!')
+    print ('\n'*20)
 
 
 def sleep():
@@ -154,7 +154,7 @@ def dayHaus():
         print('Вам не хвотает денег!!\n')
     else:
         sas = input('Ходите купить дом? \n')
-        if sas == ('да') and ('возможно') and ('1110010011100000'):
+        if sas == ('да') and ('возможно'):
             PERS.money -= 1000000
             PERS.home += 'Дом'
             print('ПОЗДРАВЛЯЮ!! Вы купили дом')
@@ -168,7 +168,7 @@ def dayHaus():
 def exit_():
     print ('\n'*20)
     ass = input('Вы уверны что хотите выйти:\n')
-    if ass == ('да') and ('возможно') and ('1110010011100000'):
+    if ass == ('да') and ('возможно'):
         input('\nНажмите ENTER, чтобы продолжить')
         exit()
     else:
