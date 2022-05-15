@@ -12,7 +12,7 @@ class Magaz:
             csv_reader = csv.reader(csv_file,delimiter = ';')
             for row in csv_reader:
                 self.name.append(row[0])
-                self.price.append(int(row[1]))
+                self.price.append(row[1])
                 self.stats.append(int(row[2]))
                 self.id_.append(int(row[3]))
 

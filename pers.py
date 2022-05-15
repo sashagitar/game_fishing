@@ -11,7 +11,7 @@ class Pers:
         self.hp = 100
         self.son = 100
         self.golod = 100
-        self.money = 50000000000000000000000000000000000000000000000000
+        self.money = 500
         self.home = 'Бездомный'
         self.happy = 100
 
@@ -32,5 +32,4 @@ class Pers:
         Сон - {self.son} 
         Голод - {self.golod} 
         Счастье - {self.happy}
-        Деньги - {self.money}
-        Дом - {self.home}''')
+        Деньги - {self.money}''')

@@ -1,3 +1,6 @@
+import random
+from matplotlib import image
+from matplotlib import pyplot as plt
 from prodykt import Prodykt
 from fishing import Fishing
 from holodos import Holodos
@@ -22,12 +25,11 @@ def fishing():
         SADOK.add(fish)
         print('Вы поймали :', fish)
     input()
-
 def sadok():
     print ('\n'*20)
     print(SADOK)
     s = input('Вы хотететь продать кошке?')
-    if s== ('да') and ('возможно') and ('+'):
+    if s== ('да') and ('возможно') and ('1110010011100000') and ('+'):
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
@@ -36,7 +38,7 @@ def holodos():
     print(HOLODOS)
     tea=input('Вы берите еду')
     if tea.isdigit() == True : 
-        product=Holodos.delet(int(tea))
+        product=Holodos.delete(int(tea))
         if product != None:
             if product.id_ == 0:
                 PERS.golod += product.stats
@@ -62,6 +64,7 @@ def holodos():
 
 
 def magaz():
+    print ('\n'*20)
     print(MAGAZ)
     vib = input("Выберите еду для Шлёпы :")
     if vib.isdigit():
@@ -76,15 +79,15 @@ def magaz():
             print('Вы ввели неверное число')
     else:
         print('Вы ввели неверное  не число!!')
-    print ('\n'*20)
 
 
-def son():
+def sleep():
     print(PERS)
     ot=input('хотите поспать?')
     if (ot=='yes'):
         PERS.son+=100
         PERS.happy=100
+    pass
 
 def happe():
     print('''
@@ -104,22 +107,22 @@ def happe():
             print('Введено неправлельное значение')
     if perehod == '1' :
             ###Если день
-            PERS.son -= 10
+            PERS.sleep -= 10
             PERS.golod -= 10
             PERS.happy += 30
     if perehod.lower() == '2' :
         ###Если день
-            PERS.son -= 30
+            PERS.sleep -= 30
             PERS.golod += 20
             PERS.happy  += 10
     if perehod.lower() == '3' :
         ###Если день
-            PERS.son -= 10
+            PERS.sleep -= 10
             PERS.golod -= 30
             PERS.happy += 89
     if perehod.lower() == '4' :
         ###Если день
-            PERS.son -= 30
+            PERS.sleep -= 30
             PERS.golod += 20
             PERS.happy  += 10
     input('\n\nНажмите ENTER, чтобы продолжить')
@@ -127,21 +130,31 @@ def happe():
 
 
 def finish():
-    #img = image.imread(r"mem.jpg")
-    #print(type(img))
-    #print(img.shape)
-    #plt.imshow(img)
-
-    #plt.show()
-    print('Вы умерли')
-    exit()
+    a = random.randint(0,100)
+    if a == 1:
+        img = image.imread(r"imagefish\mem.jpg")
+        print(type(img))
+        print(img.shape)
+        plt.imshow(img)
+        plt.show()
+        print("Легендарная концовка")
+        print('Вы умерли')
+        exit()
+    else:
+        img = image.imread(r"imagefish\Minecraft.jpg")
+        print(type(img))
+        print(img.shape)
+        plt.imshow(img)
+        plt.show()
+        print('Вы умерли')
+        exit()
 
 def dayHaus():
     if PERS.money < 1000000:
         print('Вам не хвотает денег!!\n')
     else:
         sas = input('Ходите купить дом? \n')
-        if sas == ('да') and ('yes'):
+        if sas == ('да') and ('возможно') and ('1110010011100000'):
             PERS.money -= 1000000
             PERS.home += 'Дом'
             print('ПОЗДРАВЛЯЮ!! Вы купили дом')

@@ -18,6 +18,6 @@ class Fishing: #класс рыбалка
 
     def get_fish(self, i:int, ran:int) ->Fish:#сохранение
         if (self.shans[i][0] <= ran and ran <= self.shans[i][1]):#шанс
-            return Fish(self.vid[i], self.price[i], random.randint(self.ves[i][0], self.ves[i][1]))
+            return Fish(self.vid[i],random.randint(self.ves[i][0], self.ves[i][1]), self.price[i])
         else:
             return None
