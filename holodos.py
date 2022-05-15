@@ -8,8 +8,8 @@ class Holodos:
     def add(self,prodykt:Prodykt):
         self.eda.append(prodykt)
 
-    def delete(self, id_:int) ->Prodykt:
-        if len(self.eda) > id_ >= 0:
+    def delet(self, id_:int) ->Prodykt:
+        if (id_ < len(self.eda)):
             prodykt=self.eda[id_]
             self.eda.pop(id_)
             return prodykt
@@ -18,6 +18,9 @@ class Holodos:
         
     def __str__(self) -> str:
         s=''
+        id_ = 0
         for i in self.eda:
-            s+=str(self.eda[i])+'\n'
+            s+= str (id_) + ' ' + str(i) + '\n'
+            id_+=1
         return s
+    

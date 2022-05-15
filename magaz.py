@@ -19,8 +19,11 @@ class Magaz:
     def __str__(self):
         s=''
         for i in range(len(self.name)):
-            s += str(self.duy(i))+'\n'
+            s += str(i) + ' ' + str(self.duy(i))+'\n'
         return s
         
     def duy(self, i):
-        return Prodykt(self.name[i], self.prise[i], self.stats[i], self.id_[i])
+        if i >= len(self.name):
+            return None
+        else:
+            return Prodykt(self.id_[i],self.name[i], self.price[i], self.stats[i])

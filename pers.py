@@ -4,6 +4,7 @@ class Pers:
     son=int()
     golod=int()
     money=int()
+    home=int()
     happy=int()
 
     def __init__(self):
@@ -11,7 +12,9 @@ class Pers:
         self.son = 100
         self.golod = 100
         self.money = 500
+        self.home = 'Бездомный'
         self.happy = 100
+
 
     def chec(self):
         if(self.golod<=0):
