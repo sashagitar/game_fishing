@@ -28,7 +28,8 @@ class Pers:
             return 'RIP'
 
     def stats(self):
-        print (f'''ХП - {self.hp} 
+        print (f'''    
+        ХП - {self.hp} 
         Сон - {self.son} 
         Голод - {self.golod} 
         Счастье - {self.happy}

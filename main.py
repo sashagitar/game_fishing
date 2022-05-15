@@ -14,7 +14,6 @@ PERS = Pers()
 SADOK = Sadok()
 HOLODOS = Holodos()
 
-
 def fishing():
     print ('\n'*20)
     FISHING.go_fishing()
@@ -33,28 +32,35 @@ def sadok():
         PERS.money+=SADOK.bue()
     else:
         print("Вы обидели кошку.(Пощады не ждите)")
+        PERS.hp -=50
 
 def holodos():
     print(HOLODOS)
     tea=input('Вы берите еду')
     if tea.isdigit() == True : 
-        product=Holodos.delete(int(tea))
-        if product != None:
-            if product.id_ == 0:
-                PERS.golod += product.stats
-            if product.id_ == 1:
-                PERS.son += product.stats
-            if product.id_ == 2:
-                PERS.happy += product.stats
+        prodyct=Holodos.delet(int(tea))
+        if prodyct != None:
+            if prodyct.id_ == 0:
+                PERS.golod += prodyct.stats
+                print('Вы накормили шлёпу',prodyct)
+                input('\nНажмите ENTER, чтобы продолжить')
+            if prodyct.id_ == 1:
+                PERS.son += prodyct.stats
+                print('Вы накормили шлёпу',prodyct)
+                input('\nНажмите ENTER, чтобы продолжить')
+            if prodyct.id_ == 2:
+                PERS.happy += prodyct.stats
+                print('Вы накормили шлёпу',prodyct)
+                input('\nНажмите ENTER, чтобы продолжить')
+                
             else:
                 print("Ошибка")
         else:
             print('Вы ввели неверное число')
     else:
-        print('Вы ввели неверное  не число!!')
+        print('Вы ввели неверное , не число!!')
        
-        print('Вы накормили шлёпу',product)
-        input('\nНажмите ENTER, чтобы продолжить')
+        
     if tea.isnumeric() == False :
         print('Вы ввели буквы!!!')
         input('\nНажмите ENTER, чтобы продолжить')
